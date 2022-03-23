@@ -17,3 +17,10 @@ exports.get_orders=async(req,res)=>{
   } catch (err) {
     res.status(500).json(err); }
 }
+exports.get_oneorder=async(req,res)=>{
+  try {
+    const orders= await Order.findById(_id);
+    res.status(200).json(orders);
+  } catch (err) {
+    res.status(500).json(err); }
+}
